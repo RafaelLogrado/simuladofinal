@@ -1,0 +1,102 @@
+################### Teste de usuários
+
+### 1. Cadastrar
+POST http://localhost:3000/usuario
+Content-Type: application/json
+
+{
+    "nome": "Rafael",
+    "email": "rafael@gmail.com",
+    "senha": "abcd"
+}
+
+### 2. Logar
+# @name loginReq
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "email": "rafael@gmail.com",
+    "senha": "abcd"
+}
+
+
+################### Teste de clientes
+
+### 1. Cadastrar
+POST http://localhost:3000/cliente
+Content-Type: application/json
+Authorization: {{loginReq.response.body.token}}
+
+{
+    "nome": "Marcos",
+    "cpf": "14014014071"
+}
+
+
+### 2. Atualizar
+PUT http://localhost:3000/cliente/1
+Content-Type: application/json
+Authorization: {{loginReq.response.body.token}}
+
+{
+    "nome": "Marcos",
+    "cpf": "15015015071"
+}
+
+### 3. Listar
+GET http://localhost:3000/clientes
+Content-Type: application/json
+Authorization: {{loginReq.response.body.token}}
+
+### 4. Consultar código
+GET http://localhost:3000/cliente/1
+Content-Type: application/json
+Authorization: {{loginReq.response.body.token}}
+
+### 5. Consultar pelo nome
+GET http://localhost:3000/cliente/buscar/Artur
+Content-Type: application/json
+Authorization: {{loginReq.response.body.token}}
+
+
+
+################### Teste de equipamentos
+
+### 1. Cadastrar
+POST http://localhost:3000/equipamento
+Content-Type: application/json
+Authorization: {{loginReq.response.body.token}}
+
+{
+    "idCliente": "1",
+    "modelo": "modelo A",
+    "fabricante": "Huawei",
+    "numSerie": "982198"
+}
+
+
+### 2. Atualizar
+PUT http://localhost:3000/equipamento/1
+Content-Type: application/json
+Authorization: {{loginReq.response.body.token}}
+
+{
+    "idCliente": "1",
+    "modelo": "modelo A",
+    "fabricante": "Huawei",
+    "numSerie": "160570"
+}
+
+################### Teste de inspeção
+
+### 1. Cadastrar
+POST http://localhost:3000/inspecao
+Content-Type: application/json
+Authorization: {{loginReq.response.body.token}}
+
+{
+    "idEquipamento": "1",
+    "status": "PENDENTE",
+    "data": "2026-11-12"
+}

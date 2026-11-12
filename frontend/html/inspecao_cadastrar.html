@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/inspecao_cadastrar.js"defer></script>
+    <title>SolarTech</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Home</a> &emsp;
+        </nav>
+    </header>
+    <main>
+        <h1>Sistema de cadastro de inspeção</h1>
+
+        <form>
+            <label for="idEquipamento">Cód. Equipamento: </label>
+            <input type="number" id="idEquipamento"><br>
+
+            <label for="status">status: </label>
+            <select id="status">
+                <option value="PENDENTE">PENDENTE</option>
+                <option value="REALIZADA">REALIZADA</option>
+            </select><br>
+
+            <label for="data">Data: </label>
+            <input type="date" id="data"><br>
+            <br>
+
+            <button id="btn_cadastrar">Cadastrar</button>
+        </form>
+        <div id="resposta"></div>
+    </main>
+</body>
+</html>

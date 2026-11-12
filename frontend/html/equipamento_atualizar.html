@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/equipamento_atualizar.js"defer></script>
+    <title>SolarTech</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Home</a> &emsp;
+        </nav>
+    </header>
+    <main>
+        <h1>Sistema de atualização do equipamento</h1>
+
+        <form>
+            <label for="codEquipamento">Cód. Equipamento: </label>
+            <input type="number" id="codEquipamento"><br>
+
+            <label for="idCliente">Cód. Cliente: </label>
+            <input type="number" id="idCliente"><br>
+
+            <label for="modelo">Modelo: </label>
+            <input type="text" id="modelo"><br>
+
+            <label for="fabricante">Fabricante: </label>
+            <input type="text" id="fabricante"><br>
+
+            <label for="numSerie">Núm. de Série: </label>
+            <input type="text" id="numSerie"><br>
+            <br>
+
+            <button id="btn_atualizar">Atualizar</button>
+        </form>
+        <div id="resposta"></div>
+    </main>
+</body>
+</html>
